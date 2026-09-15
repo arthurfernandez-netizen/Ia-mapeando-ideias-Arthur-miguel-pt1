@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Organizador de estudos do Thurzin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>Organizador de estudos do Thurzin</header>
+  
+  <div class="container">
+    <div class="card" onclick="openModal('Falta de foco','Dificuldade em manter atenção durante longas sessões de estudo.')">
+      <h3>Falta de foco</h3>
+      <p>Dificuldade em manter atenção...</p>
+    </div>
+    
+    <div class="card" onclick="openModal('Procrastinação','Adiar tarefas importantes e acumular responsabilidades.')">
+      <h3>Procrastinação</h3>
+      <p>Adiar tarefas importantes...</p>
+    </div>
+    
+    <div class="card" onclick="openModal('Sobrecarga','Excesso de matérias e pouco tempo para organizar.')">
+      <h3>Sobrecarga</h3>
+      <p>Excesso de matérias...</p>
+    </div>
+    
+    <div class="card" onclick="openModal('Ansiedade','Preocupação constante com prazos e desempenho.')">
+      <h3>Ansiedade</h3>
+      <p>Preocupação constante...</p>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-text"></p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title, text) {
+      document.getElementById('modal-title').innerText = title;
+      document.getElementById('modal-text').innerText = text;
+      document.getElementById('modal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
